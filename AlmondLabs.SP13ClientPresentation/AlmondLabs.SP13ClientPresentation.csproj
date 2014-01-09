@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2F5B7B4-A890-42C0-B11C-22768EFD1E3A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlmondLabs.SP13ClientPresentation</RootNamespace>
+    <AssemblyName>AlmondLabs.SP13ClientPresentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Custom Site Columns\Custom Site Columns.EventReceiver.cs">
+      <DependentUpon>Custom Site Columns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\AlmondLabs.SP13ClientPresentation\FileUpload.aspx.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\AlmondLabs.SP13ClientPresentation\FileUpload.aspx.designer.cs">
+      <DependentUpon>FileUpload.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Elements\MyTasksLink\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3157692b-96be-4f7e-ad90-0567f04e0d9e}</SharePointProjectItemId>
+    </None>
+    <None Include="Elements\SiteColumns\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d168df96-bfe6-459d-b6fd-e5264b2ba554}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Custom Site Columns\Custom Site Columns.feature">
+      <FeatureId>{e4854f6f-857a-428b-9198-03044b0eccf9}</FeatureId>
+    </None>
+    <None Include="Features\My Tasks\My Tasks.feature">
+      <FeatureId>{8632e9ea-61f6-4717-9f6c-0b6780efc752}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{de5a6218-5e7e-4a25-8b79-8a58f3805a36}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{50087aaa-2f72-4793-a9ad-6e4aec0fcb6f}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Elements\MyTasksLink\Elements.xml" />
+    <Content Include="Elements\SiteColumns\Elements.xml" />
+    <Content Include="Features\Custom Site Columns\Custom Site Columns.Template.xml">
+      <DependentUpon>Custom Site Columns.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\My Tasks\My Tasks.Template.xml">
+      <DependentUpon>My Tasks.feature</DependentUpon>
+    </Content>
+    <Content Include="Html\Item_Word_Rating.html" />
+    <Content Include="Html\RepeaterKnockout.html" />
+    <Content Include="Html\FormKnockout.html" />
+    <Content Include="Html\HelloKnockout.html" />
+    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\css\SearchRatings.css" />
+    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\FileUpload.aspx" />
+    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\js\SearchRatings.js" />
+    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\MyTasks.html" />
+    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\js\AssociatedDocumentsLookup.js" />
+    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\js\TaskListKpi.js" />
+    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\ko\AssociatedDocumentsTemplates.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

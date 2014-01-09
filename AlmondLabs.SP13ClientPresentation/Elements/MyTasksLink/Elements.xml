@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="AlmondLabs.SP13ClientPresentation.ShareSiteLink"
+                GroupId="PersonalActions"
+                Location="Microsoft.SharePoint.StandardMenu"
+                Sequence="1000"
+                Rights="ManagePermissions"
+                Title="My Tasks"
+                Description="View my tasks"
+                ImageUrl="/_layouts/AlmondLabs.Alisa/images/share.PNG">
+    <UrlAction Url="javascript:OpenPopUpPageWithTitle('{SiteUrl}/_layouts/15/AlmondLabs.SP13ClientPresentation/MyTasks.html', null, 670, 670, 'My Tasks')"/>
+  </CustomAction>
+</Elements>

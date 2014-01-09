@@ -1,0 +1,5 @@
+c:\dev\AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\bin\Debug\AlmondLabs.SP13ClientPresentation.dll
+c:\dev\AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\bin\Debug\AlmondLabs.SP13ClientPresentation.pdb
+c:\dev\AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\obj\Debug\AlmondLabs.SP13ClientPresentation.dll
+c:\dev\AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\obj\Debug\AlmondLabs.SP13ClientPresentation.pdb
+C:\DEV\AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\obj\Debug\AlmondLabs.SP13ClientPresentation.csprojResolveAssemblyReference.cache

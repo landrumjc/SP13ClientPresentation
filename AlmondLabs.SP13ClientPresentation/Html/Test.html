@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <ul data-bind="foreach:Data">
+            <li onfocus="alert('focus');" data-bind="text: 'Name ' + $index() + ' ' + Name, event: { onfocus: $root.Focus, click: $root.ClickFocus }, attr: { tabindex: $index }">
+                
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+
+        function ViewModel() {
+            var self = this;
+            self.Data = [{ Name: "Jay" }, { Name: "Eugene" }, { Name: "Pranav" }, { Name: "Hector" }];
+            self.Focus = function (data, event) {
+                alert('here');
+            };
+            self.ClickFocus = function (data, event) {
+                //alert('click');
+                //event.originalEvent.srcElement.focus();
+            };
+        }
+
+        ko.applyBindings(new ViewModel());
+
+	(function($) {
+        var url = 'http://ajax.googleapis.com/ajax/services/search/web?v=2.0&q=Baltimore%20SharePoint%20User%20Group&callback=?';
+
+        $.ajax({
+           type: 'GET',
+            url: url,
+            async: false,
+            jsonpCallback: 'jsonCallback',
+            contentType: "application/json",
+            dataType: 'jsonp',
+            success: function(json) {
+               console.debug(json);
+            },
+            error: function(e) {
+               console.log(e.message);
+            }
+        });
+
+    })(jQuery);
+    </script>
+</body>
+</html>

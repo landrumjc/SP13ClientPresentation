@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="50087aaa-2f72-4793-a9ad-6e4aec0fcb6f" solutionId="50087aaa-2f72-4793-a9ad-6e4aec0fcb6f" resetWebServer="false" sharePointProductVersion="15.0" name="AlmondLabs.SP13ClientPresentation" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="e4854f6f-857a-428b-9198-03044b0eccf9" />
+    <featureReference itemId="8632e9ea-61f6-4717-9f6c-0b6780efc752" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="de5a6218-5e7e-4a25-8b79-8a58f3805a36" />
+  </projectItems>
+</package>

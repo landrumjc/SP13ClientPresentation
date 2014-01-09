@@ -1,0 +1,17 @@
+﻿<script type="text/html" id="AssociatedDocumentsTemplate">
+	<div class="AssociatedDocumentsContainer" style="position:relative" data-bind="event: { mouseover: ShowDocuments, mouseout: HideDocuments }">
+		<div data-bind="text: LookupData().length + ' Documents'"></div>
+		<div data-bind="style: LookupData().length > 0 ? { 'width': '400px', 'max-width': '400px' } : null" style="position:absolute; top:0px; padding:5px; display:none; overflow:hidden;" class="ms-core-menu-box ms-core-defaultFont ms-shadow DocumentsList">
+			<div data-bind="style: LookupData().length > 0 ? { 'width': '400px' } : null">
+				<div data-bind="template: { name: 'AssociatedDocuments', foreach: LookupData }"></div>
+				<div data-bind="style: LookupData().length > 0 ? { 'padding-top' : '10px' } : null"><a data-bind="click: AddDocuments" style="cursor:pointer">+ add documents</a></div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="AssociatedDocuments">
+	<h3 style="padding-bottom:5px;">
+		<a data-bind="text: lookupValue, click: $root.ViewDocument" style="cursor: pointer"></a>
+	</h3>
+</script>

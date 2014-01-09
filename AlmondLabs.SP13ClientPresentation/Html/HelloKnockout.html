@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <h1 data-bind="text: Message"></h1>
+
+    <script type="text/javascript">
+
+        function ViewModel() {
+            this.Message = ko.observable("Hello world!");
+        }
+
+        ko.applyBindings(new ViewModel());
+
+    </script>
+</body>
+</html>

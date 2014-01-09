@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="Almond Labs Custom Site Columns" Id="153c971d-3268-4c39-b00b-f2d6f9da84b3" ReceiverAssembly="AlmondLabs.SP13ClientPresentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9c76461f3aa408a6" ReceiverClass="AlmondLabs.SP13ClientPresentation.Features.Custom_Site_Columns.Custom_Site_ColumnsEventReceiver" Scope="Site">
+  <ElementManifests>
+    <ElementManifest Location="SiteColumns\Elements.xml" />
+  </ElementManifests>
+</Feature>

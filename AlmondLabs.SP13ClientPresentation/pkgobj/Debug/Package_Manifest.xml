@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="50087aaa-2f72-4793-a9ad-6e4aec0fcb6f" SharePointProductVersion="15.0">
+  <Assemblies>
+    <Assembly Location="AlmondLabs.SP13ClientPresentation.dll" DeploymentTarget="GlobalAssemblyCache" />
+  </Assemblies>
+  <TemplateFiles>
+    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\css\SearchRatings.css" />
+    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\FileUpload.aspx" />
+    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\js\SearchRatings.js" />
+    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\MyTasks.html" />
+    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\js\AssociatedDocumentsLookup.js" />
+    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\js\TaskListKpi.js" />
+    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\ko\AssociatedDocumentsTemplates.html" />
+  </TemplateFiles>
+  <FeatureManifests>
+    <FeatureManifest Location="AlmondLabs.SP13ClientPresentation_Custom Site Columns\Feature.xml" />
+    <FeatureManifest Location="AlmondLabs.SP13ClientPresentation_My Tasks\Feature.xml" />
+  </FeatureManifests>
+</Solution>
