@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/knockout-2.2.1.js"></script>
+    <link href="css/metro-bootstrap-custom.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body class="al">
+    <h1 data-bind="hover: Hover">Hover over this!</h1>
+    <input class="btn" data-bind="click:ChangeHover" value="Change" />
+
+    <script type="text/javascript">
+
+        ko.bindingHandlers.hover = {
+            init: function (element, valueAccessor) {
+                var value = ko.utils.unwrapObservable(valueAccessor());
+                $(element).hover(value.MouseIn, value.MouseOut);
+            },
+            update: function (element, valueAccessor) {
+                var value = ko.utils.unwrapObservable(valueAccessor());
+                $(element).unbind("mouseout").unbind("mouseout").hover(value.MouseIn, value.MouseOut);
+            }
+        };
+
+        function ViewModel() {
+            var self = this;
+            self.Hover = ko.observable({
+                MouseIn: function () {
+                    $(this).css("background-color", "green");
+                },
+                MouseOut: function () {
+                    $(this).css("background-color", "transparent");
+                }
+            });
+
+            self.ChangeHover = function () {
+                self.Hover({
+                    MouseIn: function () {
+                        $(this).css("background-color", "red");
+                    },
+                    MouseOut: function () {
+                        $(this).css("background-color", "transparent");
+                    }
+                });
+            };
+        }
+
+        ko.applyBindings(new ViewModel());
+
+    </script>
+</body>
+</html>

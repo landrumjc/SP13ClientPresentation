@@ -1,0 +1,39 @@
+﻿<div id="container" style="position:relative;" class="al">
+    <div class="tabbable">
+        <div class="row">
+            <div class="span7">
+                <ul class="nav nav-tabs pull-left">
+                    <li class="active"><a percentfilter="0.01..0.99" data-bind="event: { click: ChangeFilter }" style="cursor:pointer;">In Progress</a></li>
+                    <li><a percentfilter="0" data-bind="event: { click: ChangeFilter }" style="cursor:pointer;">Not Started</a></li>
+                    <li><a percentfilter="1" data-bind="event: { click: ChangeFilter }" style="cursor:pointer;">Completed</a></li>
+                </ul>
+                <input class="pull-right" placeholder="Filter..." type="text" data-bind="value:Filter, valueUpdate: 'afterkeydown'" />
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Due Date</th>
+                    <th>Progress</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: Data">
+                <tr data-bind="visible: $index() % 10 == 0" class="info">
+                    <td colspan="3" style="padding-top:3px; padding-bottom:3px;">
+                        <small data-bind="text: ($index() + 1) + ' to ' + (($index() + 10) < $root.TotalRows() ? ($index() + 10) : $root.TotalRows())">page break</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a data-bind="text: Title, attr: { href: OriginalPath + '&IsDlg=1' }"></a></td>
+                    <td data-bind="text: $root.ParseDate(DueDate), css: { 'text-error' : $root.DateIsPassed(DueDate) }, style: { 'font-weight' : ($root.DateIsPassed(DueDate) ? 'bold' : '') }"></td>
+                    <td>
+                        <div class="progress" style="margin-bottom:0px;">
+                            <div class="bar" data-bind="css: { 'bar-success': PercentComplete==1 }, style: { width : (PercentComplete*100) + '%' }"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

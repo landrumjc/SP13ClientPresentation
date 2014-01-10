@@ -1,0 +1,10 @@
+﻿<div id="MyTasks"></div>
+<script type="text/javascript" src="/_layouts/15/AlmondLabs.SP13ClientPresentation/js/MyTasks.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var div = document.getElementById("MyTasks");
+        $(div).load("/_layouts/15/AlmondLabs.SP13ClientPresentation/ko/MyTasksTemplate.html", function () {
+            ko.applyBindings(new MyTasksViewModel(), div);
+        });
+    });
+</script>

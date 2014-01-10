@@ -5,7 +5,6 @@
     var TaskListKpiView = function (ctx) {
         var dueDate = new Date(Date.parse(ctx.CurrentItem.DueDate));
         var now = new Date();
-        //alert(date);
         var html = "<style type='text/css'> .kpi { height:25px; width: 30px; border-radius: 15px; } .kpi img { max-height: 25px; }</style>";
 
         var span = dueDate.getTime() - now.getTime();
@@ -34,9 +33,9 @@
         //RecipeIngredients is the Name of our field
         'DueDate': {
             'View': TaskListKpiView//,
-            /*'DisplayForm': ingredientsDisplayForm,
-            'EditForm': ingredientsNewAndEdit, //using the same function for New and Edit, but they could be different
-            'NewForm': ingredientsNewAndEdit*/
+            /*'DisplayForm': customDisplayFrom,
+            'EditForm': customNewAndEdit, //using the same function for New and Edit, but they could be different
+            'NewForm': customNewAndEdit*/
         }
     };
 

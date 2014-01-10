@@ -3,3 +3,8 @@ c:\dev\AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\bin\D
 c:\dev\AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\obj\Debug\AlmondLabs.SP13ClientPresentation.dll
 c:\dev\AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\obj\Debug\AlmondLabs.SP13ClientPresentation.pdb
 C:\DEV\AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\obj\Debug\AlmondLabs.SP13ClientPresentation.csprojResolveAssemblyReference.cache
+C:\Development\GitHub\SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\bin\Debug\AlmondLabs.SP13ClientPresentation.dll
+C:\Development\GitHub\SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\bin\Debug\AlmondLabs.SP13ClientPresentation.pdb
+C:\Development\GitHub\SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\obj\Debug\AlmondLabs.SP13ClientPresentation.csprojResolveAssemblyReference.cache
+C:\Development\GitHub\SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\obj\Debug\AlmondLabs.SP13ClientPresentation.dll
+C:\Development\GitHub\SP13ClientPresentation\AlmondLabs.SP13ClientPresentation\obj\Debug\AlmondLabs.SP13ClientPresentation.pdb

@@ -49,7 +49,7 @@ ko.bindingHandlers.starRating = {
     init: function (element, valueAccessor) {
         $(element).addClass("doc-rating");
         for (var i = 0; i < 5; i++)
-            $("").appendTo(element);
+            $(element).append(document.createElement("span"));
         $("span", element).each(function (index) {
             $(this).hover(
                 function () {
