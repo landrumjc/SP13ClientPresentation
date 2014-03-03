@@ -1,6 +1,6 @@
 ﻿webParts = {};
-webParts.clientMembers = '/_layouts/15/almondlabs.sp13clientpresentation/ko/Members.html';
-webParts.editWikiMembers = '/_layouts/15/almondlabs.sp13clientpresentation/ko/EditWikiMembers.html';
+webParts.members = '/_layouts/15/almondlabs.sp13clientpresentation/ko/Members.html';
+webParts.editMembers = '/_layouts/15/almondlabs.sp13clientpresentation/ko/EditMembers.html';
 
 ko.bindingHandlers.renderUser = {
     propertyNames: ["PreferredName", "PictureURL", "AccountName", "Title", "WorkEmail", "SipAddress"],
@@ -33,7 +33,7 @@ ko.bindingHandlers.renderUser = {
             }
             if (!userProfileProperties.AccountName)
                 userProfileProperties.AccountName = userName;
-            element.innerHTML = ru.renderPresence(userProfileProperties);
+            element.innerHTML = ru.renderPresence(userProfileProperties, value.schemaOverride);
         };
         clearTimeout(ru.timeout);
         ru.timeout = setTimeout(function () {
@@ -176,9 +176,9 @@ function PeoplePickerMembersViewModel(initUsers) {
         getWebPartProperties(self.webPartId()).done(function (wpProps) {
             var content = wpProps.get_item("Content");
             var match = /var options\s*=\s*([^;]*?);/.exec(content);
-            if (match)
+            if (match) 
                 content = content.replace(match[1], JSON.stringify(self.userNames()));
-            //console.debug(content);
+            
             saveWebPartProperties(self.webPartId(), { Content: content }).done(function () {
                 self.success("Save successful");
             }).fail(self.error);
@@ -191,7 +191,6 @@ function PeoplePickerMembersViewModel(initUsers) {
     });
 }
 PeoplePickerMembersViewModel.curId = 0;
-PeoplePickerMembersView
 
 function loadWikiMembers(initUsers) {
     var model = new PeoplePickerMembersViewModel(initUsers);
@@ -199,12 +198,12 @@ function loadWikiMembers(initUsers) {
     partId = partId.replace(/[^A-z0-9]+/g, '');
     document.write("<div id='" + partId + "'></div>");
     if (pageInEditMode()) {
-        loadWebPart(partId, webParts.editWikiMembers, function () {
+        loadWebPart(partId, webParts.editMembers, function () {
             ko.applyBindings(model, document.getElementById(partId));
         }, true);
     }
     else {
-        loadWebPart(partId, webParts.clientMembers, function () {
+        loadWebPart(partId, webParts.members, function () {
             ko.applyBindings(model, document.getElementById(partId));
         }, true);
     }

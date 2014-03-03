@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="My Tasks Link" Description="Almond Labs &quot;My Tasks&quot; link" Id="0d53f59a-9ac7-4e50-96d3-f5dd1cdacd76" Scope="Web">
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="Almond Labs &quot;My Tasks&quot; link" Id="0d53f59a-9ac7-4e50-96d3-f5dd1cdacd76" Scope="Web" Title="My Tasks Link">
   <ElementManifests>
     <ElementManifest Location="MyTasksLink\Elements.xml" />
   </ElementManifests>
