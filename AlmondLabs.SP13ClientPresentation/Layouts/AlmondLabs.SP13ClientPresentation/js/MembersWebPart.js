@@ -192,7 +192,7 @@ function PeoplePickerMembersViewModel(initUsers) {
 }
 PeoplePickerMembersViewModel.curId = 0;
 
-function loadWikiMembers(initUsers) {
+function loadMembers(initUsers) {
     var model = new PeoplePickerMembersViewModel(initUsers);
     var partId = "Element_" + model.uniqueName;
     partId = partId.replace(/[^A-z0-9]+/g, '');
