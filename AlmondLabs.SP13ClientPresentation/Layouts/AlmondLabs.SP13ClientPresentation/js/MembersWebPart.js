@@ -28,8 +28,8 @@ ko.bindingHandlers.renderUser = {
         ru.callbacks[ru.callbacks.length] = function () {
             userProfileProperties.LoginName = userName;
             userProfileProperties.Role = "";
-            for (var i = 0; i < profilePropertyNames.length; i++) {
-                userProfileProperties[profilePropertyNames[i]] = userProfileProperties[i];
+            for (var i = 0; i < ru.propertyNames.length; i++) {
+                userProfileProperties[ru.propertyNames[i]] = userProfileProperties[i];
             }
             if (!userProfileProperties.AccountName)
                 userProfileProperties.AccountName = userName;
@@ -176,9 +176,9 @@ function PeoplePickerMembersViewModel(initUsers) {
         getWebPartProperties(self.webPartId()).done(function (wpProps) {
             var content = wpProps.get_item("Content");
             var match = /var options\s*=\s*([^;]*?);/.exec(content);
-            if (match) 
+            if (match)
                 content = content.replace(match[1], JSON.stringify(self.userNames()));
-            
+
             saveWebPartProperties(self.webPartId(), { Content: content }).done(function () {
                 self.success("Save successful");
             }).fail(self.error);
@@ -192,7 +192,7 @@ function PeoplePickerMembersViewModel(initUsers) {
 }
 PeoplePickerMembersViewModel.curId = 0;
 
-function loadMembers(initUsers) {
+function loadWikiMembers(initUsers) {
     var model = new PeoplePickerMembersViewModel(initUsers);
     var partId = "Element_" + model.uniqueName;
     partId = partId.replace(/[^A-z0-9]+/g, '');
