@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmondLabs.SP13ClientPresentation", "AlmondLabs.SP13ClientPresentation\AlmondLabs.SP13ClientPresentation.csproj", "{F2F5B7B4-A890-42C0-B11C-22768EFD1E3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.SP13.Console", "AL.SP13.Console\AL.SP13.Console.csproj", "{95566723-9F1D-465A-98AF-2B2EE392514B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{F2F5B7B4-A890-42C0-B11C-22768EFD1E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2F5B7B4-A890-42C0-B11C-22768EFD1E3A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F2F5B7B4-A890-42C0-B11C-22768EFD1E3A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{95566723-9F1D-465A-98AF-2B2EE392514B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95566723-9F1D-465A-98AF-2B2EE392514B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95566723-9F1D-465A-98AF-2B2EE392514B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95566723-9F1D-465A-98AF-2B2EE392514B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
