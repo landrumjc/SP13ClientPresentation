@@ -113,12 +113,8 @@
     <Content Include="Html\HelloKnockout.html" />
     <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\css\SearchRatings.css" />
     <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\FileUpload.aspx" />
-    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\js\MembersWebPart.js" />
     <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\js\MyTasks.js" />
-    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\js\ScriptEditorSaver.js" />
     <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\js\SearchRatings.js" />
-    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\ko\EditMembers.html" />
-    <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\ko\Members.html" />
     <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\ko\MyTasksTemplate.html" />
     <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\MyTasks.html" />
     <Content Include="Layouts\AlmondLabs.SP13ClientPresentation\js\AssociatedDocumentsLookup.js" />

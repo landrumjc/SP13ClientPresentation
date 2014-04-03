@@ -47,18 +47,18 @@ function SearchRatingViewModel(avgRating, siteUrl, listId, listItemId) {
 //binding handler to control markup
 ko.bindingHandlers.starRating = {
     init: function (element, valueAccessor) {
-        $(element).addClass("doc-rating");
+        jQuery(element).addClass("doc-rating");
         for (var i = 0; i < 5; i++)
-            $(element).append(document.createElement("span"));
-        $("span", element).each(function (index) {
-            $(this).hover(
+            jQuery(element).append(document.createElement("span"));
+        jQuery("span", element).each(function (index) {
+            jQuery(this).hover(
                 function () {
-                    $(this).prevAll().add(this).addClass("hoverChosen");
-                    $(this).nextAll().addClass("hoverCleared");
+                    jQuery(this).prevAll().add(this).addClass("hoverChosen");
+                    jQuery(this).nextAll().addClass("hoverCleared");
                 },
                 function () {
-                    $(this).prevAll().add(this).removeClass("hoverChosen");
-                    $(this).nextAll().removeClass("hoverCleared");
+                    jQuery(this).prevAll().add(this).removeClass("hoverChosen");
+                    jQuery(this).nextAll().removeClass("hoverCleared");
                 }
             ).click(function () {
                 var observable = valueAccessor();
@@ -70,15 +70,15 @@ ko.bindingHandlers.starRating = {
         var observable = valueAccessor();
         var decRating = observable() - Math.floor(observable());
         var stars = observable() - decRating;
-        $("span", element).each(function (index) {
+        jQuery("span", element).each(function (index) {
             if (index < stars) {
-                $(this).toggleClass("chosen", true);
+                jQuery(this).toggleClass("chosen", true);
             } else if (decRating > 0) {
-                $(this).toggleClass("halfChosen", decRating >= 0.25 && decRating <= 0.75);
-                $(this).toggleClass("chosen", decRating > 0.75);
+                jQuery(this).toggleClass("halfChosen", decRating >= 0.25 && decRating <= 0.75);
+                jQuery(this).toggleClass("chosen", decRating > 0.75);
                 decRating = 0;
             } else
-                $(this).toggleClass("chosen", false);
+                jQuery(this).toggleClass("chosen", false);
         });
     }
 };

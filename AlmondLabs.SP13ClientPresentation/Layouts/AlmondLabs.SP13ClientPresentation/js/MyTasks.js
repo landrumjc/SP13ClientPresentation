@@ -9,6 +9,8 @@
     };
 }(jQuery));
 
+$j = jQuery.noConflict();
+
 function MyTasksViewModel() {
     var self = this;
     self.Filter = ko.observable("");
@@ -25,7 +27,7 @@ function MyTasksViewModel() {
     self.CurrentRequests = 0;
     self.LoadPagedData = function (clearData) {
         if (!self.CurrentUser()) {
-            $.SP.ajax("/_api/web/currentuser/LoginName").success(function (data) {
+            $j.SP.ajax("/_api/web/currentuser/LoginName").success(function (data) {
                 self.CurrentUser(data.d.LoginName);
                 self.LoadPagedData(clearData);
             });
@@ -36,7 +38,7 @@ function MyTasksViewModel() {
             self.Data.removeAll();
 
         var request = ++self.CurrentRequests;
-        $.SP.ajax("/_api/search/query?querytext='" + self.Filter() + "* ContentType:Task AssignedToOWSUSER:" + encodeURIComponent(self.CurrentUser()) + " PercentComplete=" + self.PercentCompleteFilter() + "'&startrow=" + self.Data().length + "&selectproperties='" + self.SearchFields.join() + "'&sortlist='" + self.SortField + "'").success(function (data) {
+        $j.SP.ajax("/_api/search/query?querytext='" + self.Filter() + "* ContentType:Task AssignedToOWSUSER:" + encodeURIComponent(self.CurrentUser()) + " PercentComplete=" + self.PercentCompleteFilter() + "'&startrow=" + self.Data().length + "&selectproperties='" + self.SearchFields.join() + "'&sortlist='" + self.SortField + "'").success(function (data) {
             if (request == self.CurrentRequests)
                 self.CurrentRequests = 0;
             else
@@ -64,8 +66,8 @@ function MyTasksViewModel() {
             }
 
             console.log(self.Data());
-            var contentHeight = $("#container").height();
-            var viewHeight = $(window).height() + $(window).scrollTop();
+            var contentHeight = $j("#container").height();
+            var viewHeight = $j(window).height() + $j(window).scrollTop();
 
             if (contentHeight < viewHeight + 30)
                 self.LoadPagedData();
@@ -73,7 +75,7 @@ function MyTasksViewModel() {
     };
 
     self.ChangeFilter = function (data, event) {
-        var jElem = $(event.originalEvent.srcElement);
+        var jElem = $j(event.originalEvent.srcElement);
         if (jElem.parent().hasClass("active"))
             return;
 
@@ -95,9 +97,9 @@ function MyTasksViewModel() {
         return parseDate.toLocaleDateString();
     };
 
-    $(window).scroll(function () {
-        var contentHeight = $("#container").height() + $("#container").offset().top;
-        var viewHeight = $(window).height() + $(window).scrollTop();
+    $j(window).scroll(function () {
+        var contentHeight = $j("#container").height() + $j("#container").offset().top;
+        var viewHeight = $j(window).height() + $j(window).scrollTop();
 
         if (contentHeight < viewHeight + 30)
             self.LoadPagedData();

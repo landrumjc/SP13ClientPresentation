@@ -6,12 +6,8 @@
   <TemplateFiles>
     <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\css\SearchRatings.css" />
     <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\FileUpload.aspx" />
-    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\js\MembersWebPart.js" />
     <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\js\MyTasks.js" />
-    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\js\ScriptEditorSaver.js" />
     <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\js\SearchRatings.js" />
-    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\ko\EditMembers.html" />
-    <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\ko\Members.html" />
     <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\ko\MyTasksTemplate.html" />
     <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\MyTasks.html" />
     <TemplateFile Location="Layouts\AlmondLabs.SP13ClientPresentation\js\AssociatedDocumentsLookup.js" />
