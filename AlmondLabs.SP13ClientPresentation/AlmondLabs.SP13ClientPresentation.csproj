@@ -107,6 +107,7 @@
     <Content Include="Html\Item_Word_Rating.html" />
     <Content Include="Html\js\jquery-2.0.3.min.js" />
     <Content Include="Html\js\knockout-2.2.1.js" />
+    <Content Include="Html\js\LogField.js" />
     <Content Include="Html\MyTasksWebPart.html" />
     <Content Include="Html\RepeaterKnockout.html" />
     <Content Include="Html\FormKnockout.html" />

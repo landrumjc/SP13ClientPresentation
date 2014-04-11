@@ -9,6 +9,7 @@
     <title></title>
 </head>
 <body class="al">
+    <h1>Knockout Custom Binding Handler</h1>
     <h1 data-bind="hover: Hover">Hover over this!</h1>
     <input class="btn" data-bind="click:ChangeHover" value="Change" />
 
@@ -21,7 +22,7 @@
             },
             update: function (element, valueAccessor) {
                 var value = ko.utils.unwrapObservable(valueAccessor());
-                $(element).unbind("mouseout").unbind("mouseout").hover(value.MouseIn, value.MouseOut);
+                $(element).unbind("mouseenter mouseleave").hover(value.MouseIn, value.MouseOut);
             }
         };
 
@@ -30,9 +31,11 @@
             self.Hover = ko.observable({
                 MouseIn: function () {
                     $(this).css("background-color", "green");
+                    //$(this).fadeOut(200);
                 },
                 MouseOut: function () {
                     $(this).css("background-color", "transparent");
+                    //$(this).fadeIn(200);
                 }
             });
 

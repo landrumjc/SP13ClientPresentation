@@ -9,7 +9,8 @@
     <title></title>
 </head>
 <body class="al">
-    <h1>Knockout Forms</h1>
+    <h1>Knockout Two Way Data Binding</h1>
+    <hr/>
     <div class="row">
         <div class="span2">First Name:</div>
         <div class="span3">
@@ -23,7 +24,7 @@
     </div>
 
     <div data-bind="visible: (FirstName() && FirstName().length > 0)">
-        <h3 data-bind="text: FirstName() + ' ' + LastName()"></h3>
+        <h3 data-bind="text: 'Name: ' +  FirstName() + ' ' + LastName()"></h3>
     </div>
 
     <script type="text/javascript">
