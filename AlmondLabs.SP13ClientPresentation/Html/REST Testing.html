@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="/_layouts/15/almondlabs.customlookupfield/js/jquery-2.0.3.min.js"></script>
+    <script src="/_layouts/15/almondlabs.customlookupfield/js/knockout-2.2.1.js"></script>
+    <link href="/_layouts/15/almondlabs.customlookupfield/css/metro-bootstrap-custom.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body class="al">
+    <h1>Testing REST</h1>
+    <hr />
+    <h3 data-bind="text: baseUrl"></h3>
+    <input type="text" data-bind="value:Url" />
+    <div data-bind="text: CompleteUrl"></div>
+    <div data-bind="jsonDebug: Result"></div>
+    <!-- ko if: Error -->
+    <div class="alert alert-error" data-bind="text:Error">
+    </div>
+    <!-- /ko -->
+
+    <script type="text/javascript">
+        (function ($) {
+            $.SP = {};
+            $.SP.get = function (apiUrl) {
+                return jQuery.ajax({
+                    url: apiUrl,
+                    method: "GET",
+                    headers: { "accept": "application/json;odata=verbose" }
+                });
+            };
+        }(jQuery));
+
+        ko.bindingHandlers.jsonDebug = {
+            init: function (element, valueAccessor) {
+                var value = ko.utils.unwrapObservable(valueAccessor);
+                element.innerHTML = JSON.stringify(value);
+            },
+            update: function (element, valueAccessor) {
+                var value = ko.utils.unwrapObservable(valueAccessor);
+                element.innerHTML = JSON.stringify(value);
+            }
+        };
+
+        function ViewModel() {
+            var self = this;
+            self.baseUrl = "https://sp13.dev.local/sites/demo/_api";
+            self.Url = ko.observable("");
+            self.CompleteUrl = ko.computed(function () {
+                return self.baseUrl + self.Url();
+            });
+            self.CompleteUrl.subscribe(function (newValue) {
+                jQuery.SP.get(newValue).done(function (data) {
+                    self.Result(data);
+                    self.Error(null);
+                }).fail(function (data) {
+                    self.Error(data.responseText);
+                });
+            });
+            self.Result = ko.observable();
+            self.Error = ko.observable();
+            this.Message = ko.observable("Hello world!");
+        }
+
+        ko.applyBindings(new ViewModel());
+
+    </script>
+</body>
+</html>
